@@ -173,8 +173,7 @@
                 <div class="kratos-status-inner">
                     <div class="kratos-status-content" itemprop="articleBody">
                         
-                            <p>#文件包含漏洞1</p>
-<p>##题目使用mt_srand()且仅仅过滤base:</p>
+                            <h1 id="文件包含漏洞1"><a href="#文件包含漏洞1" class="headerlink" title="#文件包含漏洞1"></a>#文件包含漏洞1</h1><p>##题目使用mt_srand()且仅仅过滤base:</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include</span>(<span class="string">&quot;seed.php&quot;</span>);</span><br><span class="line"><span class="comment">//mt_srand(*********);</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;Hint: &quot;</span>.<span class="title function_ invoke__">mt_rand</span>().<span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;guess&#x27;</span>]) &amp;&amp; <span class="title function_ invoke__">md5</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;guess&#x27;</span>]) === <span class="title function_ invoke__">md5</span>(<span class="title function_ invoke__">mt_rand</span>()))&#123;                <span class="keyword">if</span>(!<span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/base|\.\./i&quot;</span>,<span class="variable">$_GET</span>[<span class="string">&#x27;file&#x27;</span>]) &amp;&amp; <span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/NewStar/i&quot;</span>,<span class="variable">$_GET</span>[<span class="string">&#x27;file&#x27;</span>])    &amp;&amp; <span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;file&#x27;</span>]))&#123;    </span><br><span class="line">    <span class="comment">//flag in `flag.php`    </span></span><br><span class="line">    <span class="keyword">include</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;file&#x27;</span>]);  </span><br><span class="line"> &#125;<span class="keyword">else</span>&#123;    </span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Baby Hacker?&quot;</span>;  </span><br><span class="line"> &#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;No Hacker!&quot;</span>;</span><br><span class="line">&#125; `Hint: <span class="number">1219893521</span></span><br></pre></td></tr></table></figure>
 
 <p>##关于mt_srand():</p>
@@ -184,27 +183,27 @@
 <p>链接为工具下载地址。</p>
 <p>###工具的使用</p>
 <p>我的使用方法是将下载后的文件解压后放在kali虚拟机中</p>
-<p><img src="C:\Users\82615\AppData\Roaming\Typora\typora-user-images\image-20221015161552821.png" alt="image-20221015161552821"></p>
+<p><img src="/./%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E1/image-20221015161552821.png" alt="image-20221015161552821"></p>
 <p>在文件夹内打开终端,使用</p>
 <p>make进行编译</p>
-<p><img src="C:\Users\82615\AppData\Roaming\Typora\typora-user-images\image-20221015161810818.png" alt="image-20221015161810818"></p>
+<p><img src="/./%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E1/image-20221015161810818.png" alt="image-20221015161810818"></p>
 <p>然后文件内就会出现齿轮图标的php_mt_seed</p>
 <p>在终端内运行并传入参数</p>
-<p><img src="C:\Users\82615\AppData\Roaming\Typora\typora-user-images\image-20221015161957003.png" alt="image-20221015161957003"></p>
+<p><img src="/./%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E1/image-20221015161957003.png" alt="image-20221015161957003"></p>
 <p>如上图程序为运行完成就可以看到已经找到了可能的种子 1145146</p>
 <p>我们在vscode中运行该种子（我是用的vscode，别的运行php的软件也行）</p>
-<p><img src="C:\Users\82615\AppData\Roaming\Typora\typora-user-images\image-20221015162842964.png" alt="image-20221015162842964"></p>
+<p><img src="/./%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E1/image-20221015162842964.png" alt="image-20221015162842964"></p>
 <p>可以看到一个值为1219893521也就是提示的值，这就意味着接下来生成的随机数值为1202031004也就是我们需要传入的<code>$_POST[&#39;guess]&#39;</code>的值</p>
 <p>##php伪协议，绕过base过滤</p>
 <p>###使用rot13</p>
 <p><code>?file=php://filter/read=string.rot13/NewStar/resource=flag.php</code></p>
-<p><img src="C:\Users\82615\AppData\Roaming\Typora\typora-user-images\image-20221015164404234.png" alt="image-20221015164404234"></p>
-<p><img src="C:\Users\82615\AppData\Roaming\Typora\typora-user-images\image-20221015164433777.png" alt="image-20221015164433777"></p>
+<p><img src="/./%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E1/image-20221015164404234.png" alt="image-20221015164404234"></p>
+<p><img src="/./%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E1/image-20221015164433777.png" alt="image-20221015164433777"></p>
 <p>###使用双层编码</p>
 <p><code>php://filter/</code>协议自带一层url解码，可以使用双层url编码绕过.</p>
 <p><code>?file=php://filter/read=convert.ba%25%37%33e64-encode|NewStar/resource=flag.php</code></p>
-<p><img src="C:\Users\82615\AppData\Roaming\Typora\typora-user-images\image-20221015164314112.png" alt="image-20221015164314112"></p>
-<p><img src="C:\Users\82615\AppData\Roaming\Typora\typora-user-images\image-20221015164632515.png" alt="image-20221015164632515"></p>
+<p><img src="/./%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E1/image-20221015164314112.png" alt="image-20221015164314112"></p>
+<p><img src="/./%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E1/image-20221015164632515.png" alt="image-20221015164632515"></p>
 
                         
                     </div>
