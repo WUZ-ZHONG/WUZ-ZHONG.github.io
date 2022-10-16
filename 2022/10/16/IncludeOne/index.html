@@ -23,20 +23,19 @@
 <meta property="og:site_name" content="无终的博客">
 <meta property="og:description" content="#文件包含漏洞1##题目使用mt_srand()且仅仅过滤base:123456789101112include(&quot;seed.php&quot;);&#x2F;&#x2F;mt_srand(*********);echo &quot;Hint: &quot;.mt_rand().&quot;&lt;br&gt;&quot;;if(isset($_POST[&amp;#x27;guess&amp;#x27;]) &amp;&amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://wuz-zhong.github.io/.%5CIncludeOne%5Cimage-20221015161552821.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/16/IncludeOne/image-20221015161552821.png">
 <meta property="og:image" content="http://wuz-zhong.github.io/2022/10/16/IncludeOne/image-20221015161810818.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/IncludeOne/image-20221015161810818.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/IncludeOne/image-20221015161957003.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/IncludeOne/image-20221015162842964.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/IncludeOne/image-20221015164404234.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/IncludeOne/image-20221015164433777.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/IncludeOne/image-20221015164314112.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/IncludeOne/image-20221015164632515.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/16/IncludeOne/image-20221015161957003.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/16/IncludeOne/image-20221015162842964.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/16/IncludeOne/image-20221015164404234.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/16/IncludeOne/image-20221015164433777.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/16/IncludeOne/image-20221015164314112.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/16/IncludeOne/image-20221015164632515.png">
 <meta property="article:published_time" content="2022-10-16T00:33:54.000Z">
-<meta property="article:modified_time" content="2022-10-16T02:08:42.153Z">
+<meta property="article:modified_time" content="2022-10-16T02:17:11.445Z">
 <meta property="article:author" content="无终">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://wuz-zhong.github.io/.%5CIncludeOne%5Cimage-20221015161552821.png">
+<meta name="twitter:image" content="http://wuz-zhong.github.io/2022/10/16/IncludeOne/image-20221015161552821.png">
   
   <!-- 站点验证相关 -->
   
@@ -188,7 +187,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        1410
+                        1415
                     
                     字
                 </li>
@@ -199,7 +198,7 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1665886122153"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1665886631445"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
@@ -212,26 +211,31 @@
 <p><a target="_blank" rel="noopener" href="https://www.openwall.com/php_mt_seed/">php_mt_seed - MT_RAND（）种子饼干 (openwall.com)</a></p>
 <p>链接为工具下载地址。</p>
 <h3 id="工具的使用"><a href="#工具的使用" class="headerlink" title="###工具的使用"></a>###工具的使用</h3><p>我的使用方法是将下载后的文件解压后放在kali虚拟机中</p>
-<p><img src="/.%5CIncludeOne%5Cimage-20221015161552821.png"></p>
+<img src="/2022/10/16/IncludeOne/image-20221015161552821.png" class>
+
 <p>在文件夹内打开终端,使用</p>
 <p>make进行编译</p>
 <img src="/2022/10/16/IncludeOne/image-20221015161810818.png" class>
 
-<p><img src="/./IncludeOne/image-20221015161810818.png"></p>
 <p>然后文件内就会出现齿轮图标的php_mt_seed</p>
 <p>在终端内运行并传入参数</p>
-<p><img src="/IncludeOne/image-20221015161957003.png"></p>
+<img src="/2022/10/16/IncludeOne/image-20221015161957003.png" class>
+
 <p>如上图程序为运行完成就可以看到已经找到了可能的种子 1145146</p>
 <p>我们在vscode中运行该种子（我是用的vscode，别的运行php的软件也行）</p>
-<p><img src="/./IncludeOne/image-20221015162842964.png"></p>
+<img src="/2022/10/16/IncludeOne/image-20221015162842964.png" class>
+
 <p>可以看到一个值为1219893521也就是提示的值，这就意味着接下来生成的随机数值为1202031004也就是我们需要传入的<code>$_POST[&#39;guess]&#39;</code>的值</p>
 <h2 id="php伪协议，绕过base过滤"><a href="#php伪协议，绕过base过滤" class="headerlink" title="##php伪协议，绕过base过滤"></a>##php伪协议，绕过base过滤</h2><h3 id="使用rot13"><a href="#使用rot13" class="headerlink" title="###使用rot13"></a>###使用rot13</h3><p><code>?file=php://filter/read=string.rot13/NewStar/resource=flag.php</code></p>
-<p><img src="/./IncludeOne/image-20221015164404234.png"></p>
-<p><img src="/./IncludeOne/image-20221015164433777.png"></p>
+<img src="/2022/10/16/IncludeOne/image-20221015164404234.png" class>
+
+<img src="/2022/10/16/IncludeOne/image-20221015164433777.png" class>
+
 <h3 id="使用双层编码"><a href="#使用双层编码" class="headerlink" title="###使用双层编码"></a>###使用双层编码</h3><p><code>php://filter/</code>协议自带一层url解码，可以使用双层url编码绕过.</p>
 <p><code>?file=php://filter/read=convert.ba%25%37%33e64-encode|NewStar/resource=flag.php</code></p>
-<p><img src="/./IncludeOne/image-20221015164314112.png"></p>
-<p><img src="/./IncludeOne/image-20221015164632515.png"></p>
+<img src="/2022/10/16/IncludeOne/image-20221015164314112.png" class>
+
+<img src="/2022/10/16/IncludeOne/image-20221015164632515.png" class>
 </div>
         </div>
         
@@ -321,7 +325,7 @@
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2022-10-16T02:08:42.153Z" itemprop="dateModified">最后编辑：2022-10-16</time>
+                    <time datetime="2022-10-16T02:17:11.445Z" itemprop="dateModified">最后编辑：2022-10-16</time>
                 </div>
             </div>
         </footer>
